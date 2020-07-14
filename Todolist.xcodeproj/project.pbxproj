@@ -96,12 +96,12 @@
 			isa = PBXGroup;
 			children = (
 				0E6A5AAD24BDB8B8008A4407 /* Assets */,
+				0E6A5AB024BDB903008A4407 /* Configurations */,
 				0E6A5A8824BDB72F008A4407 /* AppDelegate.swift */,
 				0E6A5A8A24BDB72F008A4407 /* SceneDelegate.swift */,
 				0E6A5A8C24BDB72F008A4407 /* ViewController.swift */,
 				0E6A5A8E24BDB72F008A4407 /* Main.storyboard */,
 				0E6A5A9624BDB72F008A4407 /* LaunchScreen.storyboard */,
-				0E6A5A9924BDB72F008A4407 /* Info.plist */,
 				0E6A5A9124BDB72F008A4407 /* Todolist.xcdatamodeld */,
 			);
 			path = Todolist;
@@ -123,6 +123,14 @@
 				0E6A5AAE24BDB8CC008A4407 /* Assets.swift */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		0E6A5AB024BDB903008A4407 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				0E6A5A9924BDB72F008A4407 /* Info.plist */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		41475B24195EE37191048DF9 /* Pods */ = {
