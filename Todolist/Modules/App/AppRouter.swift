@@ -17,6 +17,7 @@ final class AppRouter {
     private let storeService: StoreServiceType
     
     private var splashRouter: SplashRouterType?
+    private var homeRouter: HomeRouterType?
     
     init(appViewController: AppViewControllerType, storeService: StoreServiceType) {
         self.appViewController = appViewController
@@ -27,6 +28,11 @@ final class AppRouter {
         self.splashRouter = SplashRouter(appViewController: self.appViewController, routerDelegate: self)
         self.splashRouter?.routeToSplash()
     }
+    
+    internal func routeToHome() {
+        self.homeRouter = HomeRouter(appViewController: self.appViewController, storeService: self.storeService, routerDelegate: self)
+        self.homeRouter?.routeToHome()
+    }
 }
 
 extension AppRouter: AppRouterType {
@@ -35,8 +41,6 @@ extension AppRouter: AppRouterType {
     }
 }
 
-extension AppRouter: SplashRouterDelegate {
-    func routeToHome() {
-        // route to home
-    }
-}
+extension AppRouter: SplashRouterDelegate { }
+
+extension AppRouter: HomeRouterDelegate { }
