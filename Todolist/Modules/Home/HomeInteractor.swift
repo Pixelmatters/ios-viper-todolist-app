@@ -12,10 +12,12 @@ protocol HomeInteractorType {
     func fetchTodos()
     func updateTodo(todo: Todo)
     func deleteTodo(todo: Todo)
+    func addTodo(title: String)
 }
 
 protocol HomeInteractorDelegate: class {
     func onTodosFetched(todos: [Todo])
+    func onTodoAdded()
 }
 
 final class HomeInteractor {
@@ -31,20 +33,6 @@ final class HomeInteractor {
 extension HomeInteractor: HomeInteractorType {
     func fetchTodos() {
         let context = self.storeService.getContext()
-        
-//        // Clear all todos
-//        let todosToClear = Todo.fetchAll(from: context)
-//        for todo in todosToClear {
-//            _ = Todo.delete(createdAt: todo.createdAt!, from: context)
-//        }
-//
-//        // Add dummy
-//        let dummyTodos = ["Show todos", "Complete todo", "Delete todo", "Add todo"]
-//        for dummyTodo in dummyTodos {
-//            _ = Todo.save(title: dummyTodo, to: context)
-//        }
-        
-        // Actual code
         let todos = Todo.fetchAll(from: context)
         self.interactorDelegate?.onTodosFetched(todos: todos)
     }
@@ -59,5 +47,12 @@ extension HomeInteractor: HomeInteractorType {
         let context = self.storeService.getContext()
         _ = Todo.delete(createdAt: todo.createdAt!, from: context)
         self.fetchTodos()
+    }
+    
+    func addTodo(title: String) {
+        let context = self.storeService.getContext()
+        _ = Todo.save(title: title, to: context)
+        self.fetchTodos()
+        self.interactorDelegate?.onTodoAdded()
     }
 }

@@ -18,7 +18,7 @@ final class HomeRouter {
     private weak var appViewController: AppViewControllerType?
     private weak var storeService: StoreServiceType?
     private weak var navigationController: UINavigationController?
-    private weak var modalController: ViewController?
+    private weak var modalNavigationController: UINavigationController?
     private weak var routerDelegate: HomeRouterDelegate?
     
     init(appViewController: AppViewControllerType, storeService: StoreServiceType, routerDelegate: HomeRouterDelegate) {
@@ -45,7 +45,16 @@ extension HomeRouter: HomeRouterType {
 }
 
 extension HomeRouter: HomePresenterRouterDelegate {
-    func routeToCreateTodo(from homeView: HomeViewControllerType) {
-        // todo
+    func routeToAddTodo(from homeView: HomeViewControllerType) {
+        let viewController = AddTodoViewController(presenter: homeView.presenter)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.navigationController?.present(navigationController, animated: true, completion: nil)
+        self.modalNavigationController = navigationController
+    }
+    
+    func dismissAddTodo() {
+        self.modalNavigationController?.dismiss(animated: true, completion: {
+            self.modalNavigationController = nil
+        })
     }
 }

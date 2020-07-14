@@ -42,6 +42,8 @@ class HomeViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.onHomePresenter(on: self)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addTodoTapped))
     }
     
     override func addSubviews() {
@@ -54,12 +56,16 @@ class HomeViewController: ViewController {
     
     override func addConstraints() {
         let constraints: [NSLayoutConstraint] = [
-            self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            self.tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    @objc func addTodoTapped() {
+        self.presenter.onAddTodoTapped(on: self)
     }
 }
 

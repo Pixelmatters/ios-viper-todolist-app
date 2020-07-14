@@ -12,10 +12,13 @@ protocol HomePresenterType {
     func onHomePresenter(on homeView: HomeViewControllerType)
     func onTodoTapped(on homeView: HomeViewControllerType, todo: Todo)
     func onTodoDeleted(on homeView: HomeViewControllerType, todo: Todo)
+    func onAddTodoTapped(on homeView: HomeViewControllerType)
+    func onAddTodoTapped(on addTodoView: AddTodoViewControllerType, title: String)
 }
 
 protocol HomePresenterRouterDelegate: class {
-    func routeToCreateTodo(from homeView: HomeViewControllerType)
+    func routeToAddTodo(from homeView: HomeViewControllerType)
+    func dismissAddTodo()
 }
 
 final class HomePresenter {
@@ -23,6 +26,7 @@ final class HomePresenter {
     private weak var routerDelegate: HomePresenterRouterDelegate?
     
     weak var homeView: HomeViewControllerType?
+    weak var addTodoView: AddTodoViewControllerType?
     
     init(interactor: HomeInteractorType, routerDelegate: HomePresenterRouterDelegate) {
         self.interactor = interactor
@@ -45,6 +49,16 @@ extension HomePresenter: HomePresenterType {
         self.homeView = homeView
         self.interactor.deleteTodo(todo: todo)
     }
+    
+    func onAddTodoTapped(on homeView: HomeViewControllerType) {
+        self.homeView = homeView
+        self.routerDelegate?.routeToAddTodo(from: homeView)
+    }
+    
+    func onAddTodoTapped(on addTodoView: AddTodoViewControllerType, title: String) {
+        self.addTodoView = addTodoView
+        self.interactor.addTodo(title: title)
+    }
 }
 
 extension HomePresenter: HomeInteractorDelegate {
@@ -54,5 +68,9 @@ extension HomePresenter: HomeInteractorDelegate {
             return
         }
         homeView.onTodosFetched(todos: todos)
+    }
+    
+    func onTodoAdded() {
+        self.routerDelegate?.dismissAddTodo()
     }
 }
