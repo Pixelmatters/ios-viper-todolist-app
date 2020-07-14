@@ -15,13 +15,26 @@ protocol AppRouterType {
 final class AppRouter {
     private let appViewController: AppViewControllerType
     
+    private var splashRouter: SplashRouterType?
+    
     init(appViewController: AppViewControllerType) {
         self.appViewController = appViewController
+    }
+    
+    private func routeToSplash() {
+        self.splashRouter = SplashRouter(appViewController: self.appViewController, routerDelegate: self)
+        self.splashRouter?.routeToSplash()
     }
 }
 
 extension AppRouter: AppRouterType {
     func startApplication() {
-        // route to splash screen
+        self.routeToSplash()
+    }
+}
+
+extension AppRouter: SplashRouterDelegate {
+    func routeToHome() {
+        // route to home
     }
 }
