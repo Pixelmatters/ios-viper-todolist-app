@@ -12,9 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = .white
+        
+        self.addSubviews()
+        self.addStyle()
+        self.addConstraints()
     }
 
+    open func addSubviews() {}
 
+    open func addStyle() {}
+
+    open func addConstraints() {}
 }
 
