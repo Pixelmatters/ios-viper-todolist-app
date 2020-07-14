@@ -83,6 +83,13 @@ extension HomeViewController: UITableViewDataSource {
         todoTableViewCell.delegate = self
         return todoTableViewCell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let todo = self.todos[indexPath.row]
+            self.presenter.onTodoDeleted(on: self, todo: todo)
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate {

@@ -11,6 +11,7 @@ import Foundation
 protocol HomeInteractorType {
     func fetchTodos()
     func updateTodo(todo: Todo)
+    func deleteTodo(todo: Todo)
 }
 
 protocol HomeInteractorDelegate: class {
@@ -51,6 +52,12 @@ extension HomeInteractor: HomeInteractorType {
     func updateTodo(todo: Todo) {
         let context = self.storeService.getContext()
         _ = Todo.update(completed: !todo.completed, createdAt: todo.createdAt!, on: context)
+        self.fetchTodos()
+    }
+    
+    func deleteTodo(todo: Todo) {
+        let context = self.storeService.getContext()
+        _ = Todo.delete(createdAt: todo.createdAt!, from: context)
         self.fetchTodos()
     }
 }

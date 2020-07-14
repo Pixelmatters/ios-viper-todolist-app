@@ -11,6 +11,7 @@ import Foundation
 protocol HomePresenterType {
     func onHomePresenter(on homeView: HomeViewControllerType)
     func onTodoTapped(on homeView: HomeViewControllerType, todo: Todo)
+    func onTodoDeleted(on homeView: HomeViewControllerType, todo: Todo)
 }
 
 protocol HomePresenterRouterDelegate: class {
@@ -38,6 +39,11 @@ extension HomePresenter: HomePresenterType {
     func onTodoTapped(on homeView: HomeViewControllerType, todo: Todo) {
         self.homeView = homeView
         self.interactor.updateTodo(todo: todo)
+    }
+    
+    func onTodoDeleted(on homeView: HomeViewControllerType, todo: Todo) {
+        self.homeView = homeView
+        self.interactor.deleteTodo(todo: todo)
     }
 }
 
