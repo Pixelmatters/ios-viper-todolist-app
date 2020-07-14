@@ -14,11 +14,13 @@ protocol AppRouterType {
 
 final class AppRouter {
     private let appViewController: AppViewControllerType
+    private let storeService: StoreServiceType
     
     private var splashRouter: SplashRouterType?
     
-    init(appViewController: AppViewControllerType) {
+    init(appViewController: AppViewControllerType, storeService: StoreServiceType) {
         self.appViewController = appViewController
+        self.storeService = storeService
     }
     
     private func routeToSplash() {
