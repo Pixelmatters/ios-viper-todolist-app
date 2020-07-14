@@ -10,6 +10,7 @@ import Foundation
 
 protocol HomePresenterType {
     func onHomePresenter(on homeView: HomeViewControllerType)
+    func onTodoTapped(on homeView: HomeViewControllerType, todo: Todo)
 }
 
 protocol HomePresenterRouterDelegate: class {
@@ -32,6 +33,11 @@ extension HomePresenter: HomePresenterType {
     func onHomePresenter(on homeView: HomeViewControllerType) {
         self.homeView = homeView
         self.interactor.fetchTodos()
+    }
+    
+    func onTodoTapped(on homeView: HomeViewControllerType, todo: Todo) {
+        self.homeView = homeView
+        self.interactor.updateTodo(todo: todo)
     }
 }
 

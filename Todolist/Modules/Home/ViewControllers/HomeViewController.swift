@@ -22,8 +22,10 @@ class HomeViewController: ViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(TodoTableViewCell.self, forCellReuseIdentifier: "TodoTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.allowsSelection = false
         return tableView
     }()
     
@@ -74,15 +76,24 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(frame: .zero)
-        let todo = self.todos[indexPath.row]
-        cell.textLabel?.text = todo.title
-        return cell
+        guard let todoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell", for: indexPath) as? TodoTableViewCell else {
+            return UITableViewCell()
+        }
+        todoTableViewCell.todo = self.todos[indexPath.row]
+        todoTableViewCell.delegate = self
+        return todoTableViewCell
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         // Did select row
+    }
+}
+
+extension HomeViewController: TodoTableViewCellDelegate {
+    func onTap(todo: Todo) {
+        self.presenter.onTodoTapped(on: self, todo: todo)
     }
 }

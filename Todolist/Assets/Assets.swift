@@ -13,7 +13,9 @@ protocol AssetType {
 }
 
 enum Asset: String {
-    case example
+    case checked
+    case unchecked
+    case add
 }
 
 extension Asset: AssetType {

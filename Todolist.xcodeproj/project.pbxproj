@@ -27,6 +27,9 @@
 		0EC3230A24BE014E007EE132 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230924BE014E007EE132 /* HomePresenter.swift */; };
 		0EC3230C24BE02D0007EE132 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230B24BE02D0007EE132 /* HomeInteractor.swift */; };
 		0EC3230E24BE0516007EE132 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230D24BE0516007EE132 /* HomeRouter.swift */; };
+		0EEA443524BE112F00052EC3 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA443424BE112F00052EC3 /* View.swift */; };
+		0EEA443724BE115000052EC3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA443624BE115000052EC3 /* TableViewCell.swift */; };
+		0EEA443A24BE117600052EC3 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA443924BE117600052EC3 /* TodoTableViewCell.swift */; };
 		1540F6B0546397AC973CC409 /* Pods_Todolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216CA944CE697E973ECD006 /* Pods_Todolist.framework */; };
 		E0B78AB0B34FCB395E25048D /* Pods_TodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47924B3381B16D325AC983A /* Pods_TodolistTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		0EC3230924BE014E007EE132 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		0EC3230B24BE02D0007EE132 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		0EC3230D24BE0516007EE132 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		0EEA443424BE112F00052EC3 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		0EEA443624BE115000052EC3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		0EEA443924BE117600052EC3 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		1216CA944CE697E973ECD006 /* Pods_Todolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A90ED9488725739F32375BB /* Pods-Todolist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todolist.release.xcconfig"; path = "Target Support Files/Pods-Todolist/Pods-Todolist.release.xcconfig"; sourceTree = "<group>"; };
 		7170FD75D959A47F2F5F946B /* Pods-TodolistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodolistTests.debug.xcconfig"; path = "Target Support Files/Pods-TodolistTests/Pods-TodolistTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 		0E6A5AB124BDB93D008A4407 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0EEA443324BE112500052EC3 /* View */,
 				0E6A5A9624BDB72F008A4407 /* LaunchScreen.storyboard */,
 				0E6A5A8C24BDB72F008A4407 /* ViewController.swift */,
 			);
@@ -228,6 +235,24 @@
 				0EC3230724BE00E8007EE132 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0EEA443324BE112500052EC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EEA443824BE116200052EC3 /* Todo */,
+				0EEA443424BE112F00052EC3 /* View.swift */,
+				0EEA443624BE115000052EC3 /* TableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0EEA443824BE116200052EC3 /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				0EEA443924BE117600052EC3 /* TodoTableViewCell.swift */,
+			);
+			path = Todo;
 			sourceTree = "<group>";
 		};
 		41475B24195EE37191048DF9 /* Pods */ = {
@@ -402,7 +427,9 @@
 				0EC322E224BDC062007EE132 /* AppViewController.swift in Sources */,
 				0EC322E524BDC32C007EE132 /* SplashPresenter.swift in Sources */,
 				0EC3230624BDF71C007EE132 /* Todo+CoreDataProperties.swift in Sources */,
+				0EEA443A24BE117600052EC3 /* TodoTableViewCell.swift in Sources */,
 				0EC3230C24BE02D0007EE132 /* HomeInteractor.swift in Sources */,
+				0EEA443724BE115000052EC3 /* TableViewCell.swift in Sources */,
 				0EC3230A24BE014E007EE132 /* HomePresenter.swift in Sources */,
 				0E6A5A8D24BDB72F008A4407 /* ViewController.swift in Sources */,
 				0EC322E924BDC4BE007EE132 /* SplashViewController.swift in Sources */,
@@ -413,6 +440,7 @@
 				0EC3230524BDF71C007EE132 /* Todo+CoreDataClass.swift in Sources */,
 				0E6A5AAF24BDB8CC008A4407 /* Assets.swift in Sources */,
 				0EC322E024BDC01B007EE132 /* AppRouter.swift in Sources */,
+				0EEA443524BE112F00052EC3 /* View.swift in Sources */,
 				0E6A5A9324BDB72F008A4407 /* Todolist.xcdatamodeld in Sources */,
 				0EC322E724BDC43E007EE132 /* SplashInteractor.swift in Sources */,
 				0EC322FE24BDF050007EE132 /* StoreService.swift in Sources */,
