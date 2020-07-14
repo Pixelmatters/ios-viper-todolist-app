@@ -16,6 +16,10 @@
 		0E6A5AAF24BDB8CC008A4407 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A5AAE24BDB8CC008A4407 /* Assets.swift */; };
 		0EC322E024BDC01B007EE132 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322DF24BDC01B007EE132 /* AppRouter.swift */; };
 		0EC322E224BDC062007EE132 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322E124BDC062007EE132 /* AppViewController.swift */; };
+		0EC322E524BDC32C007EE132 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322E424BDC32C007EE132 /* SplashPresenter.swift */; };
+		0EC322E724BDC43E007EE132 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322E624BDC43E007EE132 /* SplashInteractor.swift */; };
+		0EC322E924BDC4BE007EE132 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322E824BDC4BE007EE132 /* SplashViewController.swift */; };
+		0EC322EB24BDC6FF007EE132 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322EA24BDC6FF007EE132 /* SplashRouter.swift */; };
 		1540F6B0546397AC973CC409 /* Pods_Todolist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1216CA944CE697E973ECD006 /* Pods_Todolist.framework */; };
 		E0B78AB0B34FCB395E25048D /* Pods_TodolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47924B3381B16D325AC983A /* Pods_TodolistTests.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +48,10 @@
 		0E6A5AAE24BDB8CC008A4407 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		0EC322DF24BDC01B007EE132 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		0EC322E124BDC062007EE132 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		0EC322E424BDC32C007EE132 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		0EC322E624BDC43E007EE132 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		0EC322E824BDC4BE007EE132 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		0EC322EA24BDC6FF007EE132 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		1216CA944CE697E973ECD006 /* Pods_Todolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A90ED9488725739F32375BB /* Pods-Todolist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todolist.release.xcconfig"; path = "Target Support Files/Pods-Todolist/Pods-Todolist.release.xcconfig"; sourceTree = "<group>"; };
 		7170FD75D959A47F2F5F946B /* Pods-TodolistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodolistTests.debug.xcconfig"; path = "Target Support Files/Pods-TodolistTests/Pods-TodolistTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +150,7 @@
 		0EC322DD24BDBFB7007EE132 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0EC322E324BDC302007EE132 /* Splash */,
 				0EC322DE24BDBFC3007EE132 /* App */,
 			);
 			path = Modules;
@@ -155,6 +164,17 @@
 				0EC322E124BDC062007EE132 /* AppViewController.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		0EC322E324BDC302007EE132 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0EC322E624BDC43E007EE132 /* SplashInteractor.swift */,
+				0EC322E424BDC32C007EE132 /* SplashPresenter.swift */,
+				0EC322EA24BDC6FF007EE132 /* SplashRouter.swift */,
+				0EC322E824BDC4BE007EE132 /* SplashViewController.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		41475B24195EE37191048DF9 /* Pods */ = {
@@ -327,11 +347,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EC322E224BDC062007EE132 /* AppViewController.swift in Sources */,
+				0EC322E524BDC32C007EE132 /* SplashPresenter.swift in Sources */,
 				0E6A5A8D24BDB72F008A4407 /* ViewController.swift in Sources */,
+				0EC322E924BDC4BE007EE132 /* SplashViewController.swift in Sources */,
 				0E6A5A8924BDB72F008A4407 /* AppDelegate.swift in Sources */,
+				0EC322EB24BDC6FF007EE132 /* SplashRouter.swift in Sources */,
 				0E6A5AAF24BDB8CC008A4407 /* Assets.swift in Sources */,
 				0EC322E024BDC01B007EE132 /* AppRouter.swift in Sources */,
 				0E6A5A9324BDB72F008A4407 /* Todolist.xcdatamodeld in Sources */,
+				0EC322E724BDC43E007EE132 /* SplashInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
