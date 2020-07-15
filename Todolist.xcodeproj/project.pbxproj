@@ -13,7 +13,6 @@
 		0E6A5A8D24BDB72F008A4407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A5A8C24BDB72F008A4407 /* ViewController.swift */; };
 		0E6A5A9324BDB72F008A4407 /* Todolist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A5A9124BDB72F008A4407 /* Todolist.xcdatamodeld */; };
 		0E6A5A9824BDB72F008A4407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6A5A9624BDB72F008A4407 /* LaunchScreen.storyboard */; };
-		0E6A5AA324BDB72F008A4407 /* TodolistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A5AA224BDB72F008A4407 /* TodolistTests.swift */; };
 		0E6A5AAF24BDB8CC008A4407 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A5AAE24BDB8CC008A4407 /* Assets.swift */; };
 		0EC322E024BDC01B007EE132 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322DF24BDC01B007EE132 /* AppRouter.swift */; };
 		0EC322E224BDC062007EE132 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322E124BDC062007EE132 /* AppViewController.swift */; };
@@ -28,6 +27,14 @@
 		0EC3230A24BE014E007EE132 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230924BE014E007EE132 /* HomePresenter.swift */; };
 		0EC3230C24BE02D0007EE132 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230B24BE02D0007EE132 /* HomeInteractor.swift */; };
 		0EC3230E24BE0516007EE132 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230D24BE0516007EE132 /* HomeRouter.swift */; };
+		0EDB809124BF33DA00A06C59 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB809024BF33DA00A06C59 /* HomeInteractorTests.swift */; };
+		0EDB809224BF33F800A06C59 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230B24BE02D0007EE132 /* HomeInteractor.swift */; };
+		0EDB809324BF343600A06C59 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322FD24BDF050007EE132 /* StoreService.swift */; };
+		0EDB809424BF349300A06C59 /* Todolist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E6A5A9124BDB72F008A4407 /* Todolist.xcdatamodeld */; };
+		0EDB809524BF34CB00A06C59 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230324BDF71C007EE132 /* Todo+CoreDataClass.swift */; };
+		0EDB809624BF34CD00A06C59 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC3230424BDF71C007EE132 /* Todo+CoreDataProperties.swift */; };
+		0EDB809A24BF405100A06C59 /* SplashInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB809924BF405100A06C59 /* SplashInteractorTests.swift */; };
+		0EDB809B24BF40A300A06C59 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC322E624BDC43E007EE132 /* SplashInteractor.swift */; };
 		0EEA443524BE112F00052EC3 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA443424BE112F00052EC3 /* View.swift */; };
 		0EEA443724BE115000052EC3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA443624BE115000052EC3 /* TableViewCell.swift */; };
 		0EEA443A24BE117600052EC3 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEA443924BE117600052EC3 /* TodoTableViewCell.swift */; };
@@ -56,7 +63,6 @@
 		0E6A5A9724BDB72F008A4407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E6A5A9924BDB72F008A4407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6A5A9E24BDB72F008A4407 /* TodolistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodolistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E6A5AA224BDB72F008A4407 /* TodolistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistTests.swift; sourceTree = "<group>"; };
 		0E6A5AA424BDB72F008A4407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6A5AAE24BDB8CC008A4407 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		0EC322DF24BDC01B007EE132 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 		0EC3230924BE014E007EE132 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		0EC3230B24BE02D0007EE132 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		0EC3230D24BE0516007EE132 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		0EDB809024BF33DA00A06C59 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		0EDB809924BF405100A06C59 /* SplashInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractorTests.swift; sourceTree = "<group>"; };
 		0EEA443424BE112F00052EC3 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		0EEA443624BE115000052EC3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		0EEA443924BE117600052EC3 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
@@ -148,7 +156,8 @@
 		0E6A5AA124BDB72F008A4407 /* TodolistTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E6A5AA224BDB72F008A4407 /* TodolistTests.swift */,
+				0EDB809024BF33DA00A06C59 /* HomeInteractorTests.swift */,
+				0EDB809924BF405100A06C59 /* SplashInteractorTests.swift */,
 				0E6A5AA424BDB72F008A4407 /* Info.plist */,
 			);
 			path = TodolistTests;
@@ -345,6 +354,7 @@
 					};
 					0E6A5A9D24BDB72F008A4407 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 						TestTargetID = 0E6A5A8424BDB72F008A4407;
 					};
 				};
@@ -486,7 +496,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E6A5AA324BDB72F008A4407 /* TodolistTests.swift in Sources */,
+				0EDB809124BF33DA00A06C59 /* HomeInteractorTests.swift in Sources */,
+				0EDB809224BF33F800A06C59 /* HomeInteractor.swift in Sources */,
+				0EDB809324BF343600A06C59 /* StoreService.swift in Sources */,
+				0EDB809A24BF405100A06C59 /* SplashInteractorTests.swift in Sources */,
+				0EDB809524BF34CB00A06C59 /* Todo+CoreDataClass.swift in Sources */,
+				0EDB809424BF349300A06C59 /* Todolist.xcdatamodeld in Sources */,
+				0EDB809624BF34CD00A06C59 /* Todo+CoreDataProperties.swift in Sources */,
+				0EDB809B24BF40A300A06C59 /* SplashInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +687,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TodolistTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
@@ -680,6 +698,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixelmatters.todolist.TodolistTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Todolist.app/Todolist";
@@ -692,6 +711,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TodolistTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;

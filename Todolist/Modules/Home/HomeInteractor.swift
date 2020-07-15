@@ -9,6 +9,8 @@
 import Foundation
 
 protocol HomeInteractorType {
+    var interactorDelegate: HomeInteractorDelegate? { get set }
+
     func fetchTodos()
     func updateTodo(todo: Todo)
     func deleteTodo(todo: Todo)

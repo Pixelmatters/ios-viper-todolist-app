@@ -74,4 +74,11 @@ public class Todo: NSManagedObject {
         }
     }
     
+    class func flush(from context: NSManagedObjectContext) {
+        let todos = fetchAll(from: context)
+        for todo in todos {
+            _ = self.delete(createdAt: todo.createdAt!, from: context)
+        }
+    }
+    
 }

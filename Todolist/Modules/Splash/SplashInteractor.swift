@@ -9,6 +9,8 @@
 import Foundation
 
 protocol SplashInteractorType {
+    var interactorDelegate: SplashInteractorDelegate? { get set }
+    
     func performTimeout()
 }
 
