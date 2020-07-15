@@ -25,7 +25,7 @@ class AddTodoViewController: ViewController {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Todo"
-        label.textColor = .orange
+        label.textColor = .todolistOrange
         label.font = .boldSystemFont(ofSize: 24.0)
         return label
     }()
@@ -36,7 +36,7 @@ class AddTodoViewController: ViewController {
         textField.placeholder = "Buy eggs..."
         textField.addTarget(self, action: #selector(self.textfieldDidChange), for: .editingChanged)
         textField.borderStyle = .roundedRect
-        textField.tintColor = .orange
+        textField.tintColor = .todolistOrange
         return textField
     }()
     
@@ -45,7 +45,7 @@ class AddTodoViewController: ViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(self.onAddTodoTapped), for: .touchUpInside)
         button.setTitle("Add", for: .normal)
-        button.setTitleColor(.orange, for: .normal)
+        button.setTitleColor(.todolistOrange, for: .normal)
         button.setTitleColor(.lightGray, for: .disabled)
         button.isEnabled = self.isTodoTitleValid()
         return button

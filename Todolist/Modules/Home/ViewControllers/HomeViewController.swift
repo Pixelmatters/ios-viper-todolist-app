@@ -24,7 +24,7 @@ class HomeViewController: ViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Todolist"
         label.font = .boldSystemFont(ofSize: 24.0)
-        label.textColor = .orange
+        label.textColor = .todolistOrange
         return label
     }()
     

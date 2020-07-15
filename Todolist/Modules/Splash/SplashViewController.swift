@@ -19,7 +19,7 @@ class SplashViewController: ViewController {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 32.0)
-        label.textColor = .orange
+        label.textColor = .todolistOrange
         label.text = "Todolist"
         return label
     }()
@@ -36,6 +36,10 @@ class SplashViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.onSplashPresented(on: self)
+    }
+    
+    override func addStyle() {
+        self.view.backgroundColor = .todolistBlue
     }
     
     override func addSubviews() {
