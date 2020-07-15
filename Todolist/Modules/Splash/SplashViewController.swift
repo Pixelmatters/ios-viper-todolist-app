@@ -20,7 +20,7 @@ class SplashViewController: ViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 32.0)
         label.textColor = .orange
-        label.text = "Todolist App"
+        label.text = "Todolist"
         return label
     }()
     
