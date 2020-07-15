@@ -24,7 +24,9 @@ class AddTodoViewController: ViewController {
     private lazy var label: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Add new todo"
+        label.text = "Todo"
+        label.textColor = .orange
+        label.font = .boldSystemFont(ofSize: 24.0)
         return label
     }()
     
@@ -33,6 +35,8 @@ class AddTodoViewController: ViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Buy eggs..."
         textField.addTarget(self, action: #selector(self.textfieldDidChange), for: .editingChanged)
+        textField.borderStyle = .roundedRect
+        textField.tintColor = .orange
         return textField
     }()
     
@@ -40,8 +44,8 @@ class AddTodoViewController: ViewController {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(self.onAddTodoTapped), for: .touchUpInside)
-        button.setTitle("Add todo", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitle("Add", for: .normal)
+        button.setTitleColor(.orange, for: .normal)
         button.setTitleColor(.lightGray, for: .disabled)
         button.isEnabled = self.isTodoTitleValid()
         return button
@@ -54,6 +58,17 @@ class AddTodoViewController: ViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(self.closeTapped))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.textField.becomeFirstResponder()
     }
     
     override func addSubviews() {
@@ -88,6 +103,10 @@ class AddTodoViewController: ViewController {
             return
         }
         self.presenter.onAddTodoTapped(on: self, title: title)
+    }
+    
+    @objc func closeTapped() {
+        self.presenter.onCloseTapped(on: self)
     }
     
     private func isTodoTitleValid() -> Bool {

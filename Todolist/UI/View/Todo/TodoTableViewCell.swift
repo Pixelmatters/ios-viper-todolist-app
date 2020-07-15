@@ -27,7 +27,7 @@ class TodoTableViewCell: TableViewCell {
         let todoCompleted = UIButton(frame: .zero)
         todoCompleted.translatesAutoresizingMaskIntoConstraints = false
         todoCompleted.setImage(Asset.unchecked.image, for: .normal)
-        todoCompleted.addTarget(self, action: #selector(onCheckTap), for: .touchUpInside)
+        todoCompleted.addTarget(self, action: #selector(self.onTap), for: .touchUpInside)
         return todoCompleted
     }()
     
@@ -54,6 +54,11 @@ class TodoTableViewCell: TableViewCell {
         self.contentView.addSubview(self.stackView)
     }
     
+    override func addStyle() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap))
+        self.contentView.addGestureRecognizer(tap)
+    }
+    
     override func addConstraints() {
         let constraints: [NSLayoutConstraint] = [
             self.todoCompleted.widthAnchor.constraint(equalToConstant: 24),
@@ -66,7 +71,7 @@ class TodoTableViewCell: TableViewCell {
         NSLayoutConstraint.activate(constraints)
     }
     
-    @objc private func onCheckTap(event: UIButton) {
+    @objc private func onTap(event: UIButton) {
         guard let todo = self.todo else {
             assertionFailure("todo should be available on TodoTableViewCell")
             return

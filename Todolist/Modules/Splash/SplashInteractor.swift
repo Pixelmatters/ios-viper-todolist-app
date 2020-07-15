@@ -22,7 +22,7 @@ final class SplashInteractor {
 
 extension SplashInteractor: SplashInteractorType {
     func performTimeout() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.interactorDelegate?.onTimeoutPerformed()
         }
     }

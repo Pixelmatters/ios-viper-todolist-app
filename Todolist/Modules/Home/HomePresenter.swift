@@ -14,6 +14,7 @@ protocol HomePresenterType {
     func onTodoDeleted(on homeView: HomeViewControllerType, todo: Todo)
     func onAddTodoTapped(on homeView: HomeViewControllerType)
     func onAddTodoTapped(on addTodoView: AddTodoViewControllerType, title: String)
+    func onCloseTapped(on addTodoView: AddTodoViewControllerType)
 }
 
 protocol HomePresenterRouterDelegate: class {
@@ -58,6 +59,11 @@ extension HomePresenter: HomePresenterType {
     func onAddTodoTapped(on addTodoView: AddTodoViewControllerType, title: String) {
         self.addTodoView = addTodoView
         self.interactor.addTodo(title: title)
+    }
+    
+    func onCloseTapped(on addTodoView: AddTodoViewControllerType) {
+        self.addTodoView = addTodoView
+        self.routerDelegate?.dismissAddTodo()
     }
 }
 

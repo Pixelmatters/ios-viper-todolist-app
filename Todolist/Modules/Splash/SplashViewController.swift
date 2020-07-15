@@ -15,6 +15,15 @@ protocol SplashViewControllerType: class {
 class SplashViewController: ViewController {
     var presenter: SplashPresenterType
     
+    private lazy var label: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 32.0)
+        label.textColor = .orange
+        label.text = "Todolist App"
+        return label
+    }()
+    
     init(presenter: SplashPresenterType) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
@@ -29,8 +38,16 @@ class SplashViewController: ViewController {
         self.presenter.onSplashPresented(on: self)
     }
     
-    override func addStyle() {
-        self.view.backgroundColor = .red
+    override func addSubviews() {
+        self.view.addSubview(self.label)
+    }
+    
+    override func addConstraints() {
+        let constraints: [NSLayoutConstraint] = [
+            self.label.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
+            self.label.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor)
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
 }
 

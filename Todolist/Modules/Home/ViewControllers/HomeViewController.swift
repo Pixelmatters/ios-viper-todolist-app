@@ -19,13 +19,22 @@ class HomeViewController: ViewController {
     
     private var todos: [Todo]
     
+    private lazy var label: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Todolist"
+        label.font = .boldSystemFont(ofSize: 24.0)
+        label.textColor = .orange
+        return label
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(TodoTableViewCell.self, forCellReuseIdentifier: "TodoTableViewCell")
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.allowsSelection = false
+        tableView.tableFooterView = UIView()
         return tableView
     }()
     
@@ -43,23 +52,23 @@ class HomeViewController: ViewController {
         super.viewDidLoad()
         self.presenter.onHomePresenter(on: self)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addTodoTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addTodoTapped))
     }
     
     override func addSubviews() {
+        self.view.addSubview(self.label)
         self.view.addSubview(self.tableView)
-    }
-    
-    override func addStyle() {
-        self.view.backgroundColor = .lightGray
     }
     
     override func addConstraints() {
         let constraints: [NSLayoutConstraint] = [
-            self.tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            self.tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+            self.label.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16.0),
+            self.label.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            self.label.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0),
+            self.tableView.topAnchor.constraint(equalTo: self.label.bottomAnchor, constant: 16.0),
+            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -95,13 +104,6 @@ extension HomeViewController: UITableViewDataSource {
             let todo = self.todos[indexPath.row]
             self.presenter.onTodoDeleted(on: self, todo: todo)
         }
-    }
-}
-
-extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // Did select row
     }
 }
 
