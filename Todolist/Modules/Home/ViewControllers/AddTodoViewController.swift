@@ -89,7 +89,7 @@ class AddTodoViewController: ViewController {
             
             self.button.topAnchor.constraint(equalTo: self.textField.bottomAnchor, constant: 16.0),
             self.button.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 16.0),
-            self.button.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
+            self.button.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -16.0)
         ]
         NSLayoutConstraint.activate(constraints)
     }
