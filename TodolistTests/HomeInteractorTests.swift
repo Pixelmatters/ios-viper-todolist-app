@@ -40,6 +40,7 @@ class HomeInteractorTests: XCTestCase {
         Todo.flush(from: self.storeService.getContext())
         self.interactor = nil
         self.storeService = nil
+        self.expectation = nil
     }
     
     func testAddTodo() throws {

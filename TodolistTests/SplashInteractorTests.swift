@@ -20,6 +20,7 @@ class SplashInteractorTests: XCTestCase {
 
     override func tearDownWithError() throws {
         self.interactor = nil
+        self.expectation = nil
     }
 
     func testTimeout() throws {
