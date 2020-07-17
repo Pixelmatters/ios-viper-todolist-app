@@ -26,12 +26,12 @@ final class AppRouter {
     
     private func routeToSplash() {
         self.splashRouter = SplashRouter(appViewController: self.appViewController, routerDelegate: self)
-        self.splashRouter?.routeToSplash()
+        self.splashRouter?.startModule()
     }
     
     internal func routeToHome() {
         self.homeRouter = HomeRouter(appViewController: self.appViewController, storeService: self.storeService, routerDelegate: self)
-        self.homeRouter?.routeToHome()
+        self.homeRouter?.startModule()
     }
 }
 

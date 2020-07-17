@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeRouterType {
-    func routeToHome()
+    func startModule()
 }
 
 protocol HomeRouterDelegate: class { }
@@ -29,7 +29,7 @@ final class HomeRouter {
 }
 
 extension HomeRouter: HomeRouterType {
-    func routeToHome() {
+    func startModule() {
         guard let storeService = self.storeService else {
             assertionFailure("storeService should be present on HomeRouter")
             return

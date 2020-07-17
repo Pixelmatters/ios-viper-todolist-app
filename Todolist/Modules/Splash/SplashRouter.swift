@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SplashRouterType {
-    func routeToSplash()
+    func startModule()
 }
 
 protocol SplashRouterDelegate: class {
@@ -27,7 +27,7 @@ class SplashRouter {
 }
 
 extension SplashRouter: SplashRouterType {
-    func routeToSplash() {
+    func startModule() {
         let interactor = SplashInteractor()
         let presenter = SplashPresenter(interactor: interactor, routerDelegate: self)
         interactor.interactorDelegate = presenter
